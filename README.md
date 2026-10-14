@@ -77,6 +77,17 @@ mapping this pipeline expects. Once downloaded:
 python scripts/run_pipeline.py --csv data/raw/kc_house_data.csv
 ```
 
+## Results (King County, seed 0, 60/20/20 split)
+
+Plain OLS with the default features in `scripts/run_pipeline.py` (7 numeric columns, a living/lot area ratio, and one-hot `zipcode`):
+
+| Split | MAE | RMSE | R² |
+|---|---|---|---|
+| Validation | $106,186 | $190,917 | 0.708 |
+| Test | $114,014 | $212,566 | 0.695 |
+
+Reproduce with `python scripts/run_pipeline.py --csv data/raw/kc_house_data.csv`.
+
 ## Testing
 
 ```bash

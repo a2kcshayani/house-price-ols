@@ -14,22 +14,30 @@ without the dozens of categoricals a fuller housing dataset would bring.
 The raw CSV is **not committed to this repository** (see below for why).
 Fetch it yourself:
 
-1. Create a free Kaggle account if you don't have one, at kaggle.com.
-2. From your Kaggle account settings, generate an API token
+**Option A: browser (simplest)**
+
+1. Sign in at kaggle.com and open
+   [House Sales in King County, USA](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction).
+2. Click **Download**. You get `archive.zip`, which contains `kc_house_data.csv`.
+3. Unzip it into this directory:
+
+   ```bash
+   unzip ~/Downloads/archive.zip -d data/raw/
+   ```
+
+**Option B: Kaggle CLI**
+
+1. From your Kaggle account settings, generate an API token
    ("Create New API Token"). This downloads a `kaggle.json` credentials
-   file — save it to `~/.kaggle/kaggle.json` (do not commit it anywhere).
-3. Install the Kaggle CLI and download the dataset:
+   file. Save it to `~/.kaggle/kaggle.json` (do not commit it anywhere).
+2. Install the Kaggle CLI, then download and unzip the dataset:
 
    ```bash
    pip install kaggle
-   kaggle datasets download -d harlfoxem/kingcounty -f kc_house_data.csv
+   kaggle datasets download -d harlfoxem/housesalesprediction -p data/raw/ --unzip
    ```
 
-4. Move the downloaded file into this directory:
-
-   ```bash
-   mv kc_house_data.csv data/raw/kc_house_data.csv
-   ```
+Either way, you should end up with `data/raw/kc_house_data.csv`.
 
 ## Why the CSV isn't in git
 

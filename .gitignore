@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+
+# Downloaded/derived data is not committed -- see data/README.md for how
+# to fetch it.
+data/raw/*
+!data/raw/.gitkeep
